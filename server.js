@@ -7,7 +7,7 @@ var path = require("path");
 
 var app = express();
 
-// Initialize port
+// Initialize port 
 var PORT = process.env.PORT || 3001;
 
 // Sets up the Express app to handle data parsing
@@ -18,15 +18,15 @@ app.use(express.static("public"));
 
 // Set up Routes
 app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../Develop/public/index.html"));
+    res.sendFile(path.join(__dirname, "../Note_Taker/Develop/public/index.html"));
 });
 
 app.get("/notes", function(req, res) {
-    res.sendFile(path.join(__dirname, "../Develop/notes.html"));
+    res.sendFile(path.join(__dirname, "../Note_Taker/Develop/notes.html"));
 });
 
 app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "../Develop/public/index.html"));
+    res.sendFile(path.join(__dirname, "../Note_Taker/Develop/public/index.html"));
 });
 
 // Listener - "start" the server
