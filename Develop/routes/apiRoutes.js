@@ -16,13 +16,11 @@ module.exports = function(app) {
     // and then return the new note to the client
     // --------------------------------------------------------------------------------------------
     app.post("/api/notes", function(req, res) {
-        // console.log(req);
 
         // Get new note add unique id
         let addNote = req.body; // takes the request/input
         addNote.id = uuidv4();
         allNotes.push(addNote);
-        saveNote(allNotes);
 
         // Add note to db file
         fs.writeFile("./Develop/db/db.json", JSON.stringify(allNotes), "utf8", (err) => {
@@ -37,18 +35,22 @@ module.exports = function(app) {
     // and then rewrite the notes to the `db.json` file
     // --------------------------------------------------------------------------------------------
     app.delete("/api/notes/:id", function(req, res) {
-        console.log(res.json(allNotes).id);
         
-        for(var i=0; i < res.json(allNotes).length; i++) {
-            if (allNotes.id === req.params.id) {
-                //then delete that note
-
-                fs.writeFile("./Develop/db/db.json",    );
+        allNotes = allNotes.filter(note=> {
+            if (note.id == req.params.id) {
+                return false;
+            };
+            return true;
+        });
+            
+        // Remove note from db file
+        fs.writeFile("./Develop/db/db.json", JSON.stringify(allNotes), "utf8", (err) => {
+                if (err) throw err;
+                res.json(allNotes);
             }
-            else {
+        );
 
-            }
-        }
-
+        res.send(allNotes);
     });
+
 };
