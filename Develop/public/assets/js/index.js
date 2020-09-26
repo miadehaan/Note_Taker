@@ -121,7 +121,7 @@ const renderNoteList = (notes) => {
       $li.append($delBtn);
     }
     return $li;
-  };
+  }; 
 
   if (notes.length === 0) {
     noteListItems.push(create$li("No saved Notes", false));
