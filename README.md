@@ -10,6 +10,8 @@ Heroku Application: https://warm-caverns-15426.herokuapp.com/
 ## Description 
 This project utilizes Node.js & Express.js to create an app for taking notes. You can add and save new notes, as well as view and delete those saved notes. This application has been deployed on Heroku. 
 
+![demo](./Develop/public/assets/demo1.PNG)
+
 
 ## Table of Contents
 - [Deployed Application](#Deployed_Application)
@@ -25,7 +27,7 @@ This project was created using the following technologies:
 
 - Express.js
 - Node.js
-- fs Npm Package
+- fs npm Package
 - Bootstrap
     
 ## License

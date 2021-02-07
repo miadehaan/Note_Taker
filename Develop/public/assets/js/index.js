@@ -126,7 +126,7 @@ const handleUpdatedSave = function (event) {
     renderActiveNote();
   });
 
-  activeNote = {}; // ???
+  activeNote = {};
 
 }
 
